@@ -10,20 +10,20 @@ namespace ZohaBtn
 {
     class ZohaButton : Control
     {
-        //private Panel panel;
-
         public ZohaButton() : base()
         {
-            this.Size = new System.Drawing.Size(50, 50);
-            this.BackColor = Color.Gray;
-            this.Location = new Point(50, 50);
+            this.Size = new System.Drawing.Size(200, 100);
+            this.BackColor = Color.Purple;
+            this.Location = new Point(100, 100);
             base.Paint += ZohaButton_Paint;
         }
 
         private void ZohaButton_Paint(object sender, PaintEventArgs e)
         {
             var g = CreateGraphics();
-            g.DrawRectangle(new Pen(Color.Red, 3), new Rectangle(50, 50, 50, 50));
+            var brush = new SolidBrush(Color.Blue);
+            g.FillRectangle(Brushes.Red, new RectangleF(50, 35, 100, 30));
+            g.FillEllipse(brush, new RectangleF(50, 35, 30, 30));
         }
     }
 }
